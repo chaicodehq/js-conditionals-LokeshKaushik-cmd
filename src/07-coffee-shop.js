@@ -31,5 +31,176 @@
  * @returns {number} Total price or -1 for invalid input
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
-  // Your code here
+  if (size !== "small" && size !== "medium" && size !== "large") {
+    return -1;
+  } else if (
+    type !== "regular" &&
+    type !== "latte" &&
+    type !== "cappuccino" &&
+    type !== "mocha"
+  ) {
+    return -1;
+  } else if (size === "small") {
+    if (type === "regular" && extras.whippedCream && extras.extraShot) {
+      return 4.25;
+    } else if (type === "regular" && extras.whippedCream && !extras.extraShot) {
+      return 3.5;
+    } else if (type === "regular" && !extras.whippedCream && extras.extraShot) {
+      return 3.75;
+    } else if (
+      type === "regular" &&
+      !extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 3.0;
+    } else if (type === "latte" && extras.whippedCream && extras.extraShot) {
+      return 5.25;
+    } else if (type === "latte" && extras.whippedCream && !extras.extraShot) {
+      return 4.5;
+    } else if (type === "latte" && !extras.whippedCream && extras.extraShot) {
+      return 4.75;
+    } else if (type === "latte" && !extras.whippedCream && !extras.extraShot) {
+      return 4.0;
+    } else if (
+      type === "cappuccino" &&
+      extras.whippedCream &&
+      extras.extraShot
+    ) {
+      return 5.25;
+    } else if (
+      type === "cappuccino" &&
+      extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 4.5;
+    } else if (
+      type === "cappuccino" &&
+      !extras.whippedCream &&
+      extras.extraShot
+    ) {
+      return 5.75;
+    } else if (
+      type === "cappuccino" &&
+      !extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 4.0;
+    } else if (type === "mocha" && extras.whippedCream && extras.extraShot) {
+      return 6.25;
+    } else if (type === "mocha" && extras.whippedCream && !extras.extraShot) {
+      return 5.5;
+    } else if (type === "mocha" && !extras.whippedCream && extras.extraShot) {
+      return 5.75;
+    } else if (type === "mocha" && !extras.whippedCream && !extras.extraShot) {
+      return 5.0;
+    }
+  } else if (size === "medium") {
+    if (type === "regular" && extras.whippedCream && extras.extraShot) {
+      return 5.25;
+    } else if (type === "regular" && extras.whippedCream && !extras.extraShot) {
+      return 4.5;
+    } else if (type === "regular" && !extras.whippedCream && extras.extraShot) {
+      return 5.75;
+    } else if (
+      type === "regular" &&
+      !extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 4.0;
+    } else if (type === "latte" && extras.whippedCream && extras.extraShot) {
+      return 6.25;
+    } else if (type === "latte" && extras.whippedCream && !extras.extraShot) {
+      return 5.5;
+    } else if (type === "latte" && !extras.whippedCream && extras.extraShot) {
+      return 5.75;
+    } else if (type === "latte" && !extras.whippedCream && !extras.extraShot) {
+      return 5.0;
+    } else if (
+      type === "cappuccino" &&
+      extras.whippedCream &&
+      extras.extraShot
+    ) {
+      return 6.25;
+    } else if (
+      type === "cappuccino" &&
+      extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 5.5;
+    } else if (
+      type === "cappuccino" &&
+      !extras.whippedCream &&
+      extras.extraShot
+    ) {
+      return 5.75;
+    } else if (
+      type === "cappuccino" &&
+      !extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 5.5;
+    } else if (type === "mocha" && extras.whippedCream && extras.extraShot) {
+      return 7.25;
+    } else if (type === "mocha" && extras.whippedCream && !extras.extraShot) {
+      return 6.5;
+    } else if (type === "mocha" && !extras.whippedCream && extras.extraShot) {
+      return 6.75;
+    } else if (type === "mocha" && !extras.whippedCream && !extras.extraShot) {
+      return 6.0;
+    }
+  } else if (size === "large") {
+    if (type === "regular" && extras.whippedCream && extras.extraShot) {
+      return 6.25;
+    } else if (type === "regular" && extras.whippedCream && !extras.extraShot) {
+      return 5.5;
+    } else if (type === "regular" && !extras.whippedCream && extras.extraShot) {
+      return 5.75;
+    } else if (
+      type === "regular" &&
+      !extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 5.0;
+    } else if (type === "latte" && extras.whippedCream && extras.extraShot) {
+      return 7.25;
+    } else if (type === "latte" && extras.whippedCream && !extras.extraShot) {
+      return 6.5;
+    } else if (type === "latte" && !extras.whippedCream && extras.extraShot) {
+      return 6.75;
+    } else if (type === "latte" && !extras.whippedCream && !extras.extraShot) {
+      return 6.0;
+    } else if (
+      type === "cappuccino" &&
+      extras.whippedCream &&
+      extras.extraShot
+    ) {
+      return 7.25;
+    } else if (
+      type === "cappuccino" &&
+      extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 6.5;
+    } else if (
+      type === "cappuccino" &&
+      !extras.whippedCream &&
+      extras.extraShot
+    ) {
+      return 6.75;
+    } else if (
+      type === "cappuccino" &&
+      !extras.whippedCream &&
+      !extras.extraShot
+    ) {
+      return 6.0;
+    } else if (type === "mocha" && extras.whippedCream && extras.extraShot) {
+      return 8.25;
+    } else if (type === "mocha" && extras.whippedCream && !extras.extraShot) {
+      return 7.5;
+    } else if (type === "mocha" && !extras.whippedCream && extras.extraShot) {
+      return 7.75;
+    } else if (type === "mocha" && !extras.whippedCream && !extras.extraShot) {
+      return 7.0;
+    }
+  }
 }
